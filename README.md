@@ -46,6 +46,19 @@ How the two relate:
 | IEEE 118 | 93,132.6793 | 93,132.6793 | 6.8e-8 | 7.3e-13 |
 | IEEE 162 (DTC) | 101,268.2940 | 101,268.2940 | 1.8e-7 | 1.8e-12 |
 
+### AC-OPF cost compared with DC-OPF
+
+Using the Pyomo objective values above, AC-OPF costs more than DC-OPF in all six cases. The percentage difference is calculated relative to DC-OPF: `(AC-OPF − DC-OPF) / DC-OPF × 100`. AC-OPF includes losses and voltage/reactive-power constraints that the DC approximation omits; for AC-OPF, the comparison is between the local optimum reached from the stated initialization and the DC-OPF global optimum.
+
+| Case | AC-OPF − DC-OPF ($/h) | Difference relative to DC-OPF |
+|---|---:|---:|
+| IEEE 14 | 126.5541 | 6.169% |
+| IEEE 30 | 704.0749 | 9.382% |
+| IEEE 39 (EPRI) | 1,599.4052 | 1.169% |
+| IEEE 57 | 2,816.3902 | 8.099% |
+| IEEE 118 | 4,080.9272 | 4.382% |
+| IEEE 162 (DTC) | 6,807.3495 | 6.722% |
+
 ## Results: solve time
 
 **These times were measured in a Kaggle notebook (CPU only, no accelerator), and they will be different on other machines.** Kaggle sessions run on shared, virtualised hardware, so absolute times also vary from one session or run to the next, and they will differ on your own computer, Colab, or a different Kaggle session. The ratios between the two workflows are more portable than the absolute values.
