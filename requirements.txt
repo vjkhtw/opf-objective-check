@@ -1,0 +1,7 @@
+numpy
+pandas
+pyomo
+pypower
+idaes-pse
+highspy
+jupyterlab
